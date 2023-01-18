@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&subset=cyrillic" rel="stylesheet">
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--[if lte IE 9]><script src="http://cdn.jsdelivr.net/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+	<!--[if gte IE 9]><style type="text/css">.gradient{filter: none;}</style><![endif]-->
+	
+	<!-- This site is optimized with the Yoast SEO plugin v15.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Фьючерсы на биткоин — понятие и торговля контрактами</title>
+	<meta name="description" content="Определение биткон-фьючерсов и принципы их работы. Разновидности криптовалютных контрактов. Список децентрализованных и регулируемых бирж с возможностью торговли фьючерсами. Понятие хеджирования рисков. Руководство по постановке ордера на примере Binance. Боты для трейдинга." />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://cryptotradestocks.com/bitcoin-futures" />
+	<meta property="og:locale" content="ru_RU" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Фьючерсы на биткоин — понятие и торговля контрактами" />
+	<meta property="og:description" content="Определение биткон-фьючерсов и принципы их работы. Разновидности криптовалютных контрактов. Список децентрализованных и регулируемых бирж с возможностью торговли фьючерсами. Понятие хеджирования рисков. Руководство по постановке ордера на примере Binance. Боты для трейдинга." />
+	<meta property="og:url" content="https://cryptotradestocks.com/bitcoin-futures" />
+	<meta property="og:site_name" content="CryptoTradeStocks" />
+	<meta property="article:published_time" content="2020-03-03T17:17:36+00:00" />
+	<meta property="article:modified_time" content="2021-09-09T05:26:24+00:00" />
+	<meta property="og:image" content="https://cryptotradestocks.com/wp-content/uploads/2020/02/BTC-Futures.jpg" />
+	<meta property="og:image:width" content="800" />
+	<meta property="og:image:height" content="500" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" value="Написано автором">
+	<meta name="twitter:data1" value="Александр Кузнецов">
+	<meta name="twitter:label2" value="Примерное время для чтения">
+	<meta name="twitter:data2" value="1 минута">
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cryptotradestocks.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.11"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://cryptotradestocks.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5.11' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-for-wp-css'  href='https://cryptotradestocks.com/wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.css?ver=1.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-postratings-css'  href='https://cryptotradestocks.com/wp-content/plugins/wp-postratings/css/postratings-css.css?ver=1.89' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-style-css'  href='https://cryptotradestocks.com/wp-content/themes/ctstheme/style.css?ver=5.5.11' type='text/css' media='all' />
+<link rel='stylesheet' id='likely-style-css'  href='https://cryptotradestocks.com/wp-content/themes/ctstheme/inc/likely/likely.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://cryptotradestocks.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.12' type='text/css' media='all' />
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=5.5.11' id='jquery-js'></script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-content/plugins/fancybox-for-wordpress/assets/js/jquery.fancybox.js?ver=1.3.4' id='fancybox-for-wp-js'></script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-content/themes/ctstheme/js/scripts.js?ver=5.5.11' id='theme-scripts-js'></script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-content/themes/ctstheme/inc/likely/likely.js' id='likely-js-js'></script>
+<link rel="https://api.w.org/" href="https://cryptotradestocks.com/wp-json/" /><link rel="alternate" type="application/json" href="https://cryptotradestocks.com/wp-json/wp/v2/posts/4951" /><link rel="alternate" type="application/json+oembed" href="https://cryptotradestocks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcryptotradestocks.com%2Fbitcoin-futures" />
+<link rel="alternate" type="text/xml+oembed" href="https://cryptotradestocks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcryptotradestocks.com%2Fbitcoin-futures&#038;format=xml" />
+
+<!-- Fancybox for WordPress v3.2.8 -->
+<style type="text/css">
+	.fancybox-slide--image .fancybox-content{background-color: #FFFFFF}div.fancybox-caption{display:none !important;}
+	
+	img.fancybox-image{border-width:10px;border-color:#FFFFFF;border-style:solid;height:auto;}
+	div.fancybox-bg{background-color:rgba(102,102,102,0.3);opacity:1 !important;}div.fancybox-content{border-color:#FFFFFF}
+	div#fancybox-title{background-color:#FFFFFF}
+	div.fancybox-content{background-color:#FFFFFF}
+	div#fancybox-title-inside{color:#333333}
+	
+	
+	
+	div.fancybox-caption p.caption-title{display:inline-block}
+	div.fancybox-caption p.caption-title{font-size:14px}
+	div.fancybox-caption p.caption-title{color:#333333}
+	div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}div.fancybox-content p.caption-title{color:#333333;margin: 0;padding: 5px 0;}
+</style><script type="text/javascript">
+	jQuery(function () {
+
+		var mobileOnly = false;
+		
+		if (mobileOnly) {
+			return;
+		}
+
+		jQuery.fn.getTitle = function () { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
+			var arr = jQuery("a[data-fancybox]");
+									jQuery.each(arr, function() {
+										var title = jQuery(this).children("img").attr("title");
+										 var caption = jQuery(this).next("figcaption").html();
+                                        if(caption && title){jQuery(this).attr("title",title+" " + caption)}else if(title){ jQuery(this).attr("title",title);}else if(caption){jQuery(this).attr("title",caption);}
+									});			}
+
+		// Supported file extensions
+
+				var thumbnails = jQuery("a:has(img)").not(".nolightbox").not('.envira-gallery-link').not('.ngg-simplelightbox').filter(function () {
+			return /\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
+		});
+		
+
+		// Add data-type iframe for links that are not images or videos.
+		var iframeLinks = jQuery('.fancyboxforwp').filter(function () {
+			return !/\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
+		}).filter(function () {
+			return !/vimeo|youtube/i.test(jQuery(this).attr('href'))
+		});
+		iframeLinks.attr({"data-type": "iframe"}).getTitle();
+
+				// Gallery All
+		thumbnails.addClass("fancyboxforwp").attr("data-fancybox", "gallery").getTitle();
+		iframeLinks.attr({"data-fancybox": "gallery"}).getTitle();
+
+		// Gallery type NONE
+		
+		// Call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel
+		jQuery("a.fancyboxforwp").fancyboxforwp({
+			loop: false,
+			smallBtn: false,
+			zoomOpacity: "auto",
+			animationEffect: "fade",
+			animationDuration: 500,
+			transitionEffect: "fade",
+			transitionDuration: "300",
+			overlayShow: true,
+			overlayOpacity: "0.3",
+			titleShow: true,
+			titlePosition: "inside",
+			keyboard: true,
+			showCloseButton: false,
+			arrows: true,
+			clickContent:false,
+			clickSlide: "close",
+			mobile: {
+				clickContent: function (current, event) {
+					return current.type === "image" ? "toggleControls" : false;
+				},
+				clickSlide: function (current, event) {
+					return current.type === "image" ? "close" : "close";
+				},
+			},
+			wheel: false,
+			toolbar: true,
+			preventCaptionOverlap: true,
+			onInit: function() { },			onDeactivate
+	: function() { },		beforeClose: function() { },			afterShow: function() { },				afterClose: function() { },					caption : function( instance, item ) {if("undefined" != typeof jQuery(this).context ){var title = jQuery(this).context.title;} else { var title = jQuery(this).attr("title");}var caption = jQuery(this).data('caption') || '';if ( item.type === 'image' && title.length ) {caption = (caption.length ? caption + '<br />' : '') + '<p class="caption-title">'+title+'</p>' ;}return caption;},
+		afterLoad : function( instance, current ) {current.$content.append('<div class=\"fancybox-custom-caption inside-caption\" style=\" position: absolute;left:0;right:0;color:#000;margin:0 auto;bottom:0;text-align:center;background-color:#FFFFFF \">' + current.opts.caption + '</div>');},
+			})
+		;
+
+			})
+</script>
+<!-- END Fancybox for WordPress -->
+<link rel="alternate" type="application/rss+xml" title="CryptoTradeStocks Feed" href="https://cryptotradestocks.com/feed" /><style>
+.ai-viewport-3                { display: none !important;}
+.ai-viewport-2                { display: none !important;}
+.ai-viewport-1                { display: inherit !important;}
+.ai-viewport-0                { display: none !important;}
+@media (min-width: 768px) and (max-width: 979px) {
+.ai-viewport-1                { display: none !important;}
+.ai-viewport-2                { display: inherit !important;}
+}
+@media (max-width: 767px) {
+.ai-viewport-1                { display: none !important;}
+.ai-viewport-3                { display: inherit !important;}
+}
+</style>
+	
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	
+	
+	<style>/*1*/.main-menu, .sidebar-menu > ul > li:hover > a, .sidebar-menu > ul > li:hover > span, .sidebar-menu > ul > li > span, .sidebar-menu > ul li.active > a, .slider .bx-pager-item .active, .slider .bx-pager-item a:hover, .slider-posts-wrap .bx-pager-item .active, .slider-posts-wrap .bx-pager-item a:hover, .footer-bottom, .single ul li:before, .single ol li ul li:after, .single ol li:before, .add-menu > ul > li > a:hover, .add-menu > ul > li > span:hover, .main-menu__list > li > ul > li > a:hover, .main-menu__list > li > ul > li > span:hover, .cat-children__item a:hover, .related__item-img .related__item-cat > a:hover, .main-menu__list > li > ul > li > span, .main-menu__list > li > ul > li.current-post-parent > a, .add-menu > ul > li.current-post-parent > a, .add-menu > ul > li > span, .sidebar-menu > ul > .current-post-parent > a, .sidebar-menu > ul > li .menu-arrow:before, .sidebar-menu > ul > li .menu-arrow:after, .commentlist .comment .reply a:hover{background: ;}.title, .single #toc_container .toc_title{color: ;border-left: 4px solid ;}.description{border-top: 4px solid ;}.description__title, .single .wp-caption-text, .more, a:hover{color: ;}.commentlist .comment, .add-menu > ul > li > a, .add-menu > ul > li > span, .main-menu__list > li > ul > li > a, .main-menu__list > li > ul > li > span{border-bottom: 1px solid ;}.more span{border-bottom: 1px dashed ;}.slider-posts-wrap .bx-prev:hover, .slider-posts-wrap .bx-next:hover{background-color: ;border: 1px solid ;}#up{border-bottom-color: ;}#up:before, .commentlist .comment .reply a{border: 1px solid ;}.respond-form .respond-form__button{background-color: ;}@media screen and (max-width: 1023px){.main-box{border-top: 50px solid ;}
+		.m-nav{background: ;}.main-menu__list > li > ul > li > span{background: none;}.add-menu > ul > li > a, .add-menu > ul > li > span, .main-menu__list > li > ul > li > a, .main-menu__list > li > ul > li > span{border-bottom: 0;}.sidebar-menu > ul > li .menu-arrow:before, .sidebar-menu > ul > li .menu-arrow:after{background: #85ece7;}}/*2*/.add-menu__toggle{background: #5a5aa1 url(https://cryptotradestocks.com/wp-content/themes/ctstheme/images/add-ico.png) center no-repeat;}.add-menu > ul > li > a, .related__item-img .related__item-cat > a, .main-menu__list > li > ul > li > a{background: #5a5aa1;}#up:hover{border-bottom-color: #5a5aa1;}#up:hover:before{border: 1px solid #5a5aa1;}a, .sidebar-menu > ul > li > ul > li > span, .sidebar-menu > ul > li > ul > li > a:hover, .sidebar-menu > ul > li > ul > li > span:hover, .sidebar-menu > ul > li > ul > li.current-post-parent > a, .footer-nav ul li a:hover{color: #5a5aa1;}.respond-form .respond-form__button:hover{background-color: #5a5aa1;}@media screen and (max-width: 1023px){.sidebar-menu > ul > li > a, .main-menu__list li > span, .main-menu__list li > a:hover, .main-menu__list li > span:hover, .main-menu__list li > ul, .main-menu__list > li.current-post-parent > a, .sidebar-menu > ul > li > span, .sidebar-menu > ul > .current-post-parent > a{background: #5a5aa1;}.main-menu__list > li > ul > li > a:hover, .main-menu__list > li > ul > li > span:hover, .main-menu__list > li > ul > li.current-post-parent > a{background: none;}}/*3*/.post-info__cat a, .post-info__comment{background: #9187c4;}.post-info__comment:after{border-color: rgba(0, 0, 0, 0) #9187c4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);}/*<1023*/@media screen and (max-width: 1023px){.add-menu > ul > li > a, .sidebar-menu > ul > li > a{background-color: ;}.add-menu > ul > li > span, .add-menu > ul > li.current-post-parent > a, .sidebar-menu > ul > li > ul{background-color: #5a5aa1;}}.single a, .commentlist .comment .reply a, .sidebar a{color: ;}.single a:hover, .commentlist .comment .reply a:hover, .sidebar a:hover{color: ;}.post-info .post-info__cat a:hover{background: ;}.posts__item .posts__item-title a:hover, .section-posts__item-title a:hover, .related .related__item a:hover{color: ; border-bottom: 1px solid ;}</style>
+
+	
+</head>
+<body>
+	
+	<!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(53511433, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+   </script>
+   <noscript><div><img src="https://mc.yandex.ru/watch/53511433" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+   <!-- /Yandex.Metrika counter -->
+	
+	
+	<div id="main">
+		<div class="wrapper">
+			<header class="header">
+									<a href="https://cryptotradestocks.com">
+						<img src="https://cryptotradestocks.com/wp-content/uploads/2019/04/logocts.png" class="logo" alt="CryptoTradeStocks">
+					</a>
+									<div class="m-nav">
+						<!--noindex-->
+	<div class="search-form">
+	    <form method="get" action="https://cryptotradestocks.com/">
+	        <input type="text" value="" name="s" placeholder="Поиск по сайту" class="search-form__field">
+	        <input type="submit" value="" class="search-form__button">
+	    </form>
+	</div>
+	<!--/noindex-->
+							<nav class="main-menu">
+					    	<div class="main-menu__inner" data-menu-anchor="0">
+					    		<ul class="main-menu__list"><li id="menu-item-3149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3149"><a href="https://cryptotradestocks.com/exchange">Биржи</a></li>
+<li id="menu-item-3150" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3150"><a href="https://cryptotradestocks.com/teoriya">Теория трейдинга</a></li>
+<li id="menu-item-4714" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4714"><a target="_blank" rel="nofollow" href="https://www.binance.com/ru/buy-sell-crypto?ref=MOYY19LH">Купить Bitcoin</a></li>
+</ul><ul class="main-menu__list main-menu__list_m"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3149"><a href="https://cryptotradestocks.com/exchange">Биржи</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3150"><a href="https://cryptotradestocks.com/teoriya">Теория трейдинга</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4714"><a target="_blank" rel="nofollow" href="https://www.binance.com/ru/buy-sell-crypto?ref=MOYY19LH">Купить Bitcoin</a></li>
+</ul>					    	</div>
+						</nav>
+										</div>
+			</header>
+			<div class="main-box">
+				<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="breadcrumbs__link" href="https://cryptotradestocks.com/" itemprop="item"><span itemprop="name">Главная</span></a><meta itemprop="position" content="1" /></span><span class="breadcrumbs__separator"> › </span><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="breadcrumbs__link" href="https://cryptotradestocks.com/teoriya" itemprop="item"><span itemprop="name">Теория трейдинга</span></a><meta itemprop="position" content="2" /></span></div><!-- .breadcrumbs --><div class="content-wrapper">
+	<main class="content">
+							    			<time class="post-info__time post-info__time_single" datetime="2020-03-03">03.03.2020</time>
+	    				    		<div class="article-wrap" itemscope itemtype="http://schema.org/Article">
+						<article class="single">
+															<h1 class="single__title">Что такое фьючерсные контракты на Bitcoin и какие биржи с ними работают?</h1>
+															<div itemprop="articleBody">
+								<p>В условиях нестабильного рынка фьючерсы на биткоин являются одним из самых популярных инструментов для заработка. Они имеют ряд преимуществ и при правильном подходе позволяют снизить риски, в сравнении с другими инструментами торговли.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-4955" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/BTC-Futures.jpg" alt="BTC Futures" width="800" height="500" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/02/BTC-Futures.jpg 800w, https://cryptotradestocks.com/wp-content/uploads/2020/02/BTC-Futures-300x188.jpg 300w, https://cryptotradestocks.com/wp-content/uploads/2020/02/BTC-Futures-768x480.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<!--noindex--><div id="toc_container" class="no_bullets"><p class="toc_title">Содержание</p><ul class="toc_list"><li><a href="#i"><span class="toc_number toc_depth_1">1</span> Что такое фьючерсы</a></li><li><a href="#i-2"><span class="toc_number toc_depth_1">2</span> Основные понятия и виды фьючерсов</a></li><li><a href="#i-3"><span class="toc_number toc_depth_1">3</span> Виды маржи</a></li><li><a href="#i-4"><span class="toc_number toc_depth_1">4</span> Фьючерсные контракты на биткоин</a></li><li><a href="#i-5"><span class="toc_number toc_depth_1">5</span> Криптовалютные биржи с торговлей фьючерсами</a><ul><li><a href="#Bitmex"><span class="toc_number toc_depth_2">5.1</span> Bitmex</a></li><li><a href="#Binance"><span class="toc_number toc_depth_2">5.2</span> Binance</a></li><li><a href="#Okex"><span class="toc_number toc_depth_2">5.3</span> Okex</a></li><li><a href="#Deribit"><span class="toc_number toc_depth_2">5.4</span> Deribit</a></li><li><a href="#Bybit"><span class="toc_number toc_depth_2">5.5</span> Bybit</a></li><li><a href="#Gate"><span class="toc_number toc_depth_2">5.6</span> Gate</a></li><li><a href="#Kumex"><span class="toc_number toc_depth_2">5.7</span> Kumex</a></li></ul></li><li><a href="#i-6"><span class="toc_number toc_depth_1">6</span> Регулируемые биржи для аккредитованных инвесторов</a><ul><li><a href="#_CME"><span class="toc_number toc_depth_2">6.1</span> Фьючерсы на CME и даты их закрытия</a></li><li><a href="#Bakkt"><span class="toc_number toc_depth_2">6.2</span> Bakkt</a></li></ul></li><li><a href="#i-7"><span class="toc_number toc_depth_1">7</span> Расчет риска</a></li><li><a href="#i-8"><span class="toc_number toc_depth_1">8</span> Постановка ордеров</a></li><li><a href="#i-9"><span class="toc_number toc_depth_1">9</span> Использование ботов</a><ul><li><a href="#3ommas"><span class="toc_number toc_depth_2">9.1</span> 3Сommas</a></li><li><a href="#RevenueBot"><span class="toc_number toc_depth_2">9.2</span> RevenueBot</a></li><li><a href="#Haasbot8217s_Futures_Bot"><span class="toc_number toc_depth_2">9.3</span> Haasbot&#8217;s Futures Bot</a></li><li><a href="#DeriBot"><span class="toc_number toc_depth_2">9.4</span> DeriBot</a></li></ul></li></ul></div><!--/noindex-->
+<h2><span id="i">Что такое фьючерсы</span></h2>
+<p>Фьючерс – это тип деривативов, который представляет собой контракт на покупку криптовалюты с особыми условиями. Обе стороны контракта обязуются выполнить действия (продажи или покупка валюты) по заведомо указанной стоимости. Принцип работы фьючерсов схож с приобретением товара в перспективе, когда покупатель договаривается с магазином о покупке по конкретно указанной цене. При этом, даже если цена товара на момент покупки будет отличаться, покупатель оплатит ровно ту сумму, которая зафиксирована во фьючерсе.</p>
+<p>Таким образом фьючерсы дают определенные гарантии как покупателям, которые получают указанное количество криптовалюты по конкретной цене, так и продавцам, для которых установленный фьючерс является своего рода гарантией выкупа со стороны покупателя. Основная задача фьючерсов – снижать риски и обеспечивать заработок на изменении курса криптовалюты.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-4957" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/Printsip-raboty-fyuchersa.png" alt="Принцип работы фьючерса" width="829" height="419" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/02/Printsip-raboty-fyuchersa.png 829w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Printsip-raboty-fyuchersa-300x152.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Printsip-raboty-fyuchersa-768x388.png 768w" sizes="(max-width: 829px) 100vw, 829px" /></p>
+<p>Криптовалютные фьючерсы (crypto futures) почти ничем не отличаются от других типов фьючерсов. Они позволяют размещать ставки как на повышение цены, так и на понижение.</p>
+<p>Особым условием торговли на некоторых площадках является то, что криптовалютная биржа позволяет торговать фьючерсами, например, BTC, даже без необходимости обладать криптовалютой. То есть спекуляция происходит исключительно на колебаниях курса. Тем не менее, ряд бирж, таких как Bakkt, в числе требований выставляют поставку реальных биткоинов после завершения контракта.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-4959" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/Shema-raboty-fyuchersa.jpg" alt="Схема работы фьючерса" width="500" height="364" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/02/Shema-raboty-fyuchersa.jpg 500w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Shema-raboty-fyuchersa-300x218.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<h2><span id="i-2">Основные понятия и виды фьючерсов</span></h2>
+<p>В криптовалютной торговле выделяют два вида фьючерсов:</p>
+<ul>
+<li>расчетные;</li>
+<li>постановочные.</li>
+</ul>
+<p><strong>Постановочный тип</strong> достаточно простой для понимания. Такие контракты отличаются тем, что у них есть срок истечения, который указывается заранее. После этого такая сделка подразумевает выполнение для обеих сторон (продажу для продавца и покупку для покупателя) указанные в спецификации условия. Тем не менее, на деле большая часть постановочных ордеров (зависит от биржи) работает без поставки основного актива, то есть они имеют исключительно спекулятивный характер. Подобные операции относятся к хеджирующим, когда закрытие происходит до реальной даты экспирации.</p>
+<p><strong>Расчетными</strong> считаются те фьючерсы, которые изначально не требуют наличия основной валюты. Все, что необходимо для их открытия – сумма, которая равна разнице между стоимостью фьючерса и ценой актива на момент исполнения контракта.</p>
+<p>Отдельно необходимо рассмотреть ключевые отличия фьючерсной торговли биткоинами. Это касается спецификации и экспирации контрактов. Спецификация – утвержденный на бирже документ, в котором описаны все условия заключенного контракта. Включает в себя:</p>
+<ul>
+<li>Название сделки;</li>
+<li>Биржевое наименование (для CME это BTC, для CBOE – XBT);</li>
+<li>Размеры контракта;</li>
+<li>Тип сделки (расчетный или постановочный контракт);</li>
+<li>Дата обращения или завершения контракта;</li>
+<li>Минимальный ценовой шаг (например, для CBOE он составляет 5 пунктов).</li>
+</ul>
+<blockquote><p>Экспирация – окончание обращения фьючерса на бирже. В указанный срок выполняются все обязательства по сделке, то есть производится уплата ценовой разницы (вариационная маржа) или выполняется поставка основного актива.</p></blockquote>
+<h2><span id="i-3">Виды маржи</span></h2>
+<p>Для фьючерсной торговли важно понимать разницу в типах маржи:</p>
+<ul>
+<li><strong>Начальная</strong> (или депозитная) – необходимый гарантийный взнос, который биржа взимает при открытии позиции. Возвращается после закрытия контракта. В среднем размер маржи зависит от волатильности. Для BTC он может составлять 40% и выше от рыночной стоимости базового актива (CBOE, CME и другие биржи).</li>
+<li><strong>Поддерживающая маржа</strong> – необходимая сумма, которая должна быть на счету для предотвращения принудительного закрытия позиции (маржин-колл). Размер маржинальных требований зависит от биржи, которая выставляет свои условия для торговли. Потому показатель может отличаться на разных площадках.</li>
+<li><strong>Вариационная маржа</strong> – сумма средств, которая составляет убыток или прибыль от закрытых контрактов. Значение рассчитывается по результатам торговой сессии.</li>
+</ul>
+<h2><span id="i-4">Фьючерсные контракты на биткоин</span></h2>
+<p>Торговля биткоин-фьючерсами проводится по четко установленным правилам. Это необходимо для того, чтобы регулировать рынок. Также на биржах введены некоторые ограничения в виде лимита на число контрактов. Это позволяет снижать количество манипуляций и обеспечивать устойчивую торговлю фьючерсами.</p>
+<p>Фьючерсный контракт представляет собой сделку на покупку или продажу биткоина. При его открытии одна сторона обязуется выкупить актив по указанной цене. Например, текущая стоимость BTC составляет 8 500$. Открывая сделку, вы обязуетесь выкупить актив в виде 1 BTC через 3 месяца по такой же цене.</p>
+<p>За этот период стоимость актива может вырасти как до 10 000$, что принесет прибыль, так и до 4 000$, что даст существенные убытки. Потому правильное прогнозирование позволяет не только получать прибыль, так и управлять рисками.</p>
+<p>Основное отличие фьючерсного от спотового рынка заключается в том, что сделки исполняются через промежуток времени. Благодаря этому объемы и количество контрактов позволяют определить движение курса на будущий период.</p>
+<h2><span id="i-5">Криптовалютные биржи с торговлей фьючерсами</span></h2>
+<p>Все большее количество бирж вводят возможность торговать фьючерсными контрактами. Такая торговля отличается от обычной маржинальной рядом условий, основным среди которых является управление торговым плечом, дата экспирации и спецификация.</p>
+<p>Общее распределение рынка фьючерсных контрактов на биткоин выглядит следующим образом:</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/Raspredelenie-rynka-fyuchersov.png"><img loading="lazy" class="aligncenter wp-image-5018 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Raspredelenie-rynka-fyuchersov.png" alt="Распределение рынка фьючерсов" width="820" height="466" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Raspredelenie-rynka-fyuchersov.png 820w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Raspredelenie-rynka-fyuchersov-300x170.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Raspredelenie-rynka-fyuchersov-768x436.png 768w" sizes="(max-width: 820px) 100vw, 820px" /></a></p>
+<p>Рассмотрим наиболее крупные биржи, которые поддерживают фьючерсную торговлю.</p>
+<h3><span id="Bitmex">Bitmex</span></h3>
+<p>Площадка предоставляет возможность торговать как BTC, так и Ethereum фьючерсами. Считается лидером по объему торгов.</p>
+<p>Официальный сайт: <a href="https://www.bitmex.com/register/QgNBih" target="_blank" rel="noopener nofollow">https://www.bitmex.com</a> (при регистрации по ссылке скидка -10% на комиссию)</p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – бессрочные (с экспирацией);</li>
+<li>Дата экспирации – 4 месяца;</li>
+<li>Ставка финансирования – 0.01%;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – 1%;</li>
+<li>Поддерживающая маржа – 0.5%;</li>
+<li>Кредитное плечо – для бессрочных до 100х, для срочных – до 50х;</li>
+<li>Средний суточный объем торгов – $1.82 млрд.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5033" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Informatsiya-o-kontrakte-na-Bitmex.jpg" alt="Информация о контракте на Bitmex" width="654" height="691" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Informatsiya-o-kontrakte-na-Bitmex.jpg 654w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Informatsiya-o-kontrakte-na-Bitmex-284x300.jpg 284w" sizes="(max-width: 654px) 100vw, 654px" /></p>
+<h3><span id="Binance">Binance</span></h3>
+<p>Известная биржа также ввела возможность фьючерсной торговли и открыла для этого на площадке отдельный терминал.</p>
+<p>Официальный сайт: <a href="https://www.binance.com/en/register?ref=MOYY19LH" target="_blank" rel="noopener">https://www.binance.com</a></p>
+<p>Необходимо открыть фьючерсный счет в разделе &#171;Фьючерсный кошелек&#187; (при указании кода <strong>39003043</strong> получите -10% скидку на комиссию).</p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – бессрочный (BTCUSDT);</li>
+<li>Ставка финансирования – 0.01%;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – 0.8%;</li>
+<li>Поддерживающая маржа – 0.4%</li>
+<li>Кредитное плечо – до 125х;</li>
+<li>Средний суточный объем торгов – $967 млн.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5038" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsii-fyuchersnyh-kontraktov-Binance.jpg" alt="Спецификации фьючерсных контрактов Binance" width="655" height="225" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsii-fyuchersnyh-kontraktov-Binance.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsii-fyuchersnyh-kontraktov-Binance-300x103.jpg 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<h3><span id="Okex">Okex</span></h3>
+<p>Вторая по объему торгов и уровню биржа, которая специализируется на бессрочных контрактах и фьючерсах.</p>
+<p>Официальный сайт: <a href="https://www.okex.com/join/1872262" target="_blank" rel="noopener nofollow">https://www.okex.com</a></p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – фьючерсы (недельные, двухнедельные и квартальные), бессрочные;</li>
+<li>Ставка финансирования – 0.01%;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – рассчитывается по формуле Face Value x Number of swaps;</li>
+<li>Поддерживающая маржа – рассчитывается по формуле: Fix margin + UPL / Объем позиции;</li>
+<li>Кредитное плечо – для бессрочных до 100х, для фьючерсов с датой закрытия – до 20х;</li>
+<li>Средний суточный объем торгов – $1.73 млрд.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5040" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Tehnicheskie-dannye-fyuchersov-na-OKEx-1.jpg" alt="Технические данные фьючерсов на OKEx" width="655" height="225" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Tehnicheskie-dannye-fyuchersov-na-OKEx-1.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Tehnicheskie-dannye-fyuchersov-na-OKEx-1-300x103.jpg 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<h3><span id="Deribit">Deribit</span></h3>
+<p>Биржа изначально позиционируется как площадка, направленная на торговлю криптовалютными деривативами. Имеет поддержку контрактов для BTC и Ethereum.</p>
+<p>Официальный сайт: <a href="https://www.deribit.com/reg-8899.2910?q=home" target="_blank" rel="noopener nofollow">https://www.deribit.com/</a> (при регистрации по ссылке скидка -10% на комиссию)</p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – бессрочные, опционы;</li>
+<li>Ставка финансирования – рассчитывается автоматически;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – 5% (20x торговое плечо);</li>
+<li>Поддерживающая маржа – 3%</li>
+<li>Кредитное плечо – до 100х;</li>
+<li>Средний суточный объем торгов – $165 млн.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5041" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsiya-fbyuchersa-na-Deribit.jpg" alt="Спецификация фьючерса на Deribit" width="655" height="860" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsiya-fbyuchersa-na-Deribit.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsiya-fbyuchersa-na-Deribit-228x300.jpg 228w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<h3><span id="Bybit">Bybit</span></h3>
+<p>Площадка специализируется на бессрочных фьючерсах, поддерживает BTC, ETH, Ripple, EOS.</p>
+<p>Официальный сайт: <a href="https://www.bybit.com" target="_blank" rel="noopener nofollow">https://www.bybit.com</a></p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – бессрочные;</li>
+<li>Ставка финансирования – 0.01% за 7 часов;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – 1%;</li>
+<li>Поддерживающая маржа – 0.5%</li>
+<li>Кредитное плечо – до 100х;</li>
+<li>Средний суточный объем торгов – $479 млн.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5042" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Harakteristiki-BTCUSD-na-Bybit.jpg" alt="Характеристики BTCUSD на Bybit" width="655" height="557" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Harakteristiki-BTCUSD-na-Bybit.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Harakteristiki-BTCUSD-na-Bybit-300x255.jpg 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<h3><span id="Gate">Gate</span></h3>
+<p>Китайская площадка, работающая с 2013 года. Специализируется на бессрочных контрактах.</p>
+<p>Официальный сайт: <a href="https://www.gate.io/ref/2559525" target="_blank" rel="noopener nofollow">https://www.gate.io</a></p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – бессрочные;</li>
+<li>Ставка финансирования – 0.063%;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – 1%;</li>
+<li>Поддерживающая маржа – 0.5%</li>
+<li>Кредитное плечо – до 100х;</li>
+<li>Средний суточный объем торгов – $31 млн.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5043" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Dannye-kontraktov-Gate.jpg" alt="Данные контрактов Gate" width="656" height="321" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Dannye-kontraktov-Gate.jpg 656w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Dannye-kontraktov-Gate-300x147.jpg 300w" sizes="(max-width: 656px) 100vw, 656px" /></p>
+<h3><span id="Kumex">Kumex</span></h3>
+<p>Площадка представляет собой дочернюю биржу Kucoin, которая предназначена для торговли деривативами.</p>
+<p>Официальный сайт: <a href="https://www.kumex.com/" target="_blank" rel="noopener nofollow">https://www.kumex.com/</a></p>
+<p>Ключевые особенности:</p>
+<ul>
+<li>Тип контрактов – бессрочные, месячные, квартальные;</li>
+<li>Ставка финансирования – 0.01%;</li>
+<li>Интервал финансирования – каждые 8 часов;</li>
+<li>Стартовая маржа – 1% + Входной Взнос Тейкера + Взнос за Выход Тейкера;</li>
+<li>Поддерживающая маржа – 0.5% + Взнос за Выход Тейкера + Ставка Финансирования;</li>
+<li>Кредитное плечо – до 100х;</li>
+<li>Средний суточный объем торгов – $12 млн.</li>
+</ul>
+<p>Остальные характеристики контракта:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5044" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsii-XBTUSDM-na-Kumex.jpg" alt="Спецификации XBTUSDM на Kumex" width="655" height="449" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsii-XBTUSDM-na-Kumex.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Spetsifikatsii-XBTUSDM-na-Kumex-300x206.jpg 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<h2><span id="i-6">Регулируемые биржи для аккредитованных инвесторов</span></h2>
+<p>Особенность регулируемых бирж заключается в том, что любая торговля на этих площадках доступна только для брокеров. Это значит, что для вступления в подобные биржи необходимо заплатить крупную сумму (от тысяч до сотен тысяч $) и получить аккредитацию.</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/02/CBOE-i-CME.jpeg"><img loading="lazy" class="aligncenter wp-image-4977 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/CBOE-i-CME.jpeg" alt="CBOE и CME" width="1000" height="842" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/02/CBOE-i-CME.jpeg 1000w, https://cryptotradestocks.com/wp-content/uploads/2020/02/CBOE-i-CME-300x253.jpeg 300w, https://cryptotradestocks.com/wp-content/uploads/2020/02/CBOE-i-CME-768x647.jpeg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></a></p>
+<h3><span id="_CME">Фьючерсы на CME и даты их закрытия</span></h3>
+<p>CME или Chicago Mercantile Exchange – это крупнейшая торговая площадка в мире. Для индивидуальных инвесторов поиск брокера для торговли на CME является обязательным условием. Брокер предоставляет маржинальный счет (не денежный).</p>
+<p>После закрытия контракта на CME выплаты осуществляются в долларах, где сумма является эквивалентом стоимости биткоина. Календарь закрытия фьючерсов BTC на CME:</p>
+<ul>
+<li>Февраль – 28;</li>
+<li>Март – 27;</li>
+<li>Апрель – 24;</li>
+<li>Май – 29;</li>
+<li>Июнь – 26;</li>
+<li>Июль – 31.</li>
+</ul>
+<p>Отслеживать объемы торгов биткоин-фьючерсов можно в разделе <a href="https://www.cmegroup.com/trading/equity-index/us-index/bitcoin.html" target="_blank" rel="noopener nofollow">https://www.cmegroup.com/trading/equity-index/us-index/bitcoin.html</a>.</p>
+<h3><span id="Bakkt">Bakkt</span></h3>
+<p>Это специализированная площадка для хранения и продажи цифровых активов для институционных инвесторов и пользователей. Изначально поддерживает только BTC, с последующим добавлением других криптовалют. Особенностью биржи является предложение по однодневным фьючерсам.</p>
+<p>Их характеристики:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5047" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Harakteristiki-Bakkt-BTC-USD-Daily-Future.jpg" alt="Характеристики Bakkt BTC (USD) Daily Future" width="655" height="467" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Harakteristiki-Bakkt-BTC-USD-Daily-Future.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Harakteristiki-Bakkt-BTC-USD-Daily-Future-300x214.jpg 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<p>После истечения контракта инвесторы получают не эквивалентную сумму, как на других площадках, а основной актив. Финансирование на создание биржи производилось с учетом крупнейших корпораций, среди которых Microsoft, Starbucks и прочие.</p>
+<p>Наиболее оптимальным способом отслеживания ежедневного объема торгов является Bakktbot, который публикует постоянные отчеты в twitter <a href="https://twitter.com/bakktbot" target="_blank" rel="noopener nofollow">https://twitter.com/bakktbot</a>.</p>
+<p>Динамика фьючерсных контрактов за год:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-5046" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Dinamika-Bakkt.jpg" alt="Динамика Bakkt" width="655" height="565" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Dinamika-Bakkt.jpg 655w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Dinamika-Bakkt-300x259.jpg 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<h2><span id="i-7">Расчет риска</span></h2>
+<p>Торговая деятельность на бирже криптовалютных фьючерсов делится на две цели: получение прибыли и хеджирование рисков. Для получения прибыли используются обычные спекулятивные методы за счет изменения курса и грамотного прогнозирования. Хеджирование представляет собой определенную страховку от рисков.</p>
+<p>Например, если вам необходимо совершить определенную сделку в будущем на 10 BTC, но при этом есть опасения о снижении цены, осуществляется покупка фьючерса по конкретной цене. Таким образом после окончания действия контракта покупатель гарантированно получает нужную сумму, независимо от изменения цен. Подобный инструмент позволяет обеспечить гарантированный доход, хотя он слабо подходит для спекулятивной торговли.</p>
+<p>Подробно рассчитать фьючерсные риски по формуле можно на примере универсальных калькуляторов: <a href="https://antiliquidation.gitlab.io/#XbtUsd" target="_blank" rel="noopener nofollow">https://antiliquidation.gitlab.io/#XbtUsd</a>.</p>
+<h2><span id="i-8">Постановка ордеров</span></h2>
+<p>Открытие ордеров отличается от других подобных операций лишь наличием некоторых особенностей и спецификаций. Крупные биржи позаботились о том, чтобы процесс был простым и доступным для каждого трейдера.</p>
+<p>Алгоритм открытия ордера на бирже <a href="https://www.binance.com/en/register?ref=MOYY19LH" target="_blank" rel="noopener nofollow">https://www.binance.com</a>:</p>
+<ol>
+<li>Для начала необходимо перевести средства из биржевого на фьючерсный кошелек (осуществляется нажатием кнопки «перевод» ниже <a href="https://cryptotradestocks.com/birzhevoj-stakan" target="_blank" rel="noopener nofollow">стакана цен</a>).Введите нужную сумму и нажмите кнопку подтверждения. После этого под кнопкой будет отображаться баланс фьючерсного кошелька.<a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/Perevod-na-fyuchersnyj-koshelek.png"><img loading="lazy" class="aligncenter wp-image-5020 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Perevod-na-fyuchersnyj-koshelek.png" alt="Перевод на фьючерсный кошелек" width="1280" height="604" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Perevod-na-fyuchersnyj-koshelek.png 1280w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Perevod-na-fyuchersnyj-koshelek-300x142.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Perevod-na-fyuchersnyj-koshelek-1024x483.png 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Perevod-na-fyuchersnyj-koshelek-768x362.png 768w" sizes="(max-width: 1280px) 100vw, 1280px" /></a></li>
+<li>Перед открытием ордера необходимо выставить кредитное плечо (на панели выше графика).<a href="https://cryptotradestocks.com/wp-content/uploads/2020/02/Razmer-plecha.png"><img loading="lazy" class="aligncenter wp-image-4979 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/Razmer-plecha.png" alt="Размер плеча" width="1204" height="703" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/02/Razmer-plecha.png 1204w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Razmer-plecha-300x175.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Razmer-plecha-1024x598.png 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Razmer-plecha-768x448.png 768w" sizes="(max-width: 1204px) 100vw, 1204px" /></a></li>
+<li>Также необходимо выбрать тип маржи. По умолчанию для всех контрактов выставлена кросс маржа, как более безопасная в вопросе контроля рисков. Тем не менее, трейдеры могут переключить тип маржи на изолирующую на верхней панели.<a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezhim-marzhi.png"><img loading="lazy" class="aligncenter wp-image-5021 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezhim-marzhi.png" alt="Режим маржи" width="971" height="579" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezhim-marzhi.png 971w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezhim-marzhi-300x179.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezhim-marzhi-768x458.png 768w" sizes="(max-width: 971px) 100vw, 971px" /></a></li>
+<li>После необходимо выбрать тип ордера. Лимитные сделки – отложенные контракты, которые отправляются в стакан. В графе «рынок» открываются сделки покупки и продажи по текущей цене.<img loading="lazy" class="aligncenter size-full wp-image-4980" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/Limit.png" alt="Лимит" width="328" height="91" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/02/Limit.png 328w, https://cryptotradestocks.com/wp-content/uploads/2020/02/Limit-300x83.png 300w" sizes="(max-width: 328px) 100vw, 328px" /></li>
+<li>Выставление стоп-лимита (страховка от разворота курса против прогноза).<img loading="lazy" class="aligncenter size-full wp-image-4981" src="https://cryptotradestocks.com/wp-content/uploads/2020/02/Stop-limit.png" alt="Стоп-лимит" width="246" height="106" /></li>
+<li>Для открытия ордера необходимо ввести цену USDT и количество покупаемых BTC, которое позволяют приобрести средства на кошельке с учетом кредитного плеча.</li>
+<li>Нажать «купить» и повторно нажать кнопку после уведомления. После этого сделка появляется в списке ордеров.</li>
+</ol>
+<p>Чтобы закрыть контракт, необходимо перейти в окно «Позиции». Если коэффициент маржи будет приближен к максимальным значениям в процентах, позиция будет ликвидирована принудительно.</p>
+<p>Закрытие происходит с помощью выставления лимитного ордера с указанной ценой, или же по рыночной цене.</p>
+<p>Следует обратить внимание на опцию «калькулятор» (иконка в правой нижней части экрана, возле окна открытия позиций).</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat.png"><img loading="lazy" class="aligncenter wp-image-5022 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat.png" alt="Результат" width="1643" height="693" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat.png 1643w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat-300x127.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat-1024x432.png 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat-768x324.png 768w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Rezultat-1536x648.png 1536w" sizes="(max-width: 1643px) 100vw, 1643px" /></a></p>
+<p>Калькулятор позволяет рассчитать PnL (прибыль с убытком) с помощью введения данных в поля.</p>
+<h2><span id="i-9">Использование ботов</span></h2>
+<p>Боты используются трейдерами, которые выработали свою торговую систему. В таком случае при использовании правильного кредитного плеча можно получить увеличение прибыли. Также программы содержат встроенные и уже готовые торговые системы, которые можно подключать по желанию.</p>
+<p>Основная задача ботов – автоматизация торговли, но стоит помнить, что такой способ торговли может быть более рискованным, так как зависит от настроек системы и бота.</p>
+<h3><span id="3ommas">3Сommas</span></h3>
+<p><a href="https://3commas.io/?c=tc166888" target="_blank" rel="noopener nofollow">https://3commas.io</a> – популярный бот для торговли фьючерсами на криптовалютных биржах. Имеет гибкие настройки, которые позволяют полностью отрегулировать и автоматизировать работу бота.</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/3Sommas.png"><img loading="lazy" class="aligncenter wp-image-5025 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/3Sommas.png" alt="3Сommas" width="1343" height="432" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/3Sommas.png 1343w, https://cryptotradestocks.com/wp-content/uploads/2020/03/3Sommas-300x97.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/3Sommas-1024x329.png 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/3Sommas-768x247.png 768w" sizes="(max-width: 1343px) 100vw, 1343px" /></a></p>
+<p>Трейдеры могут выставлять не только базовые опции, в виде кредитного плеча, курса открытия/закрытия и прочих, но и интервалы между позициями, отложенные сделки для проверки актуальности и прочие условия.</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/Zapushhennye-boty-na-3Sommas.png"><img loading="lazy" class="aligncenter wp-image-5026 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Zapushhennye-boty-na-3Sommas.png" alt="Запущенные боты на 3Сommas" width="1132" height="232" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Zapushhennye-boty-na-3Sommas.png 1132w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Zapushhennye-boty-na-3Sommas-300x61.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Zapushhennye-boty-na-3Sommas-1024x210.png 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Zapushhennye-boty-na-3Sommas-768x157.png 768w" sizes="(max-width: 1132px) 100vw, 1132px" /></a></p>
+<h3><span id="RevenueBot">RevenueBot</span></h3>
+<p><a href="https://app.revenuebot.io/external/r/14145?l=ru" target="_blank" rel="noopener nofollow">https://revenuebot.io</a> &#8212; робот для автоматизированной работы на популярных криптобиржах. С апреля 2020 года в нем появилась поддержка торговли фьючерсами на платформе Binance Futures.</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/revenuebot.jpg"><img loading="lazy" class="aligncenter wp-image-5058 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/revenuebot.jpg" alt="revenuebot" width="1481" height="806" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/revenuebot.jpg 1481w, https://cryptotradestocks.com/wp-content/uploads/2020/03/revenuebot-300x163.jpg 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/revenuebot-1024x557.jpg 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/revenuebot-768x418.jpg 768w" sizes="(max-width: 1481px) 100vw, 1481px" /></a></p>
+<p>Инструкция по настройке: <a href="https://blog.revenuebot.io/ru/2020/04/23/binance-futures/" target="_blank" rel="noopener nofollow">https://blog.revenuebot.io/ru/2020/04/23/binance-futures/</a></p>
+<h3><span id="Haasbot8217s_Futures_Bot">Haasbot&#8217;s Futures Bot</span></h3>
+<p>Начиная с версии 2.3 в Haashbot &#8212; <a href="https://www.haasonline.com/?ref=8610" target="_blank" rel="noopener">https://haasonline.com</a> &#8212; появилась поддержка фьючерсной торговли. В данный момент бот настроен для:</p>
+<ul>
+<li><a href="https://cryptotradestocks.com/bitmex" target="_blank" rel="noopener">Bitmex</a>;</li>
+<li>OKCoin;</li>
+<li>BitVC.</li>
+</ul>
+<p>Бот имеет достаточно удобный интерфейс, настроен на три вида действий по открытию ордеров: длинные, короткие и «нет позиции».</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/Futures-Bot.png"><img loading="lazy" class="aligncenter wp-image-5023 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/Futures-Bot.png" alt="Futures Bot" width="1320" height="849" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/Futures-Bot.png 1320w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Futures-Bot-300x193.png 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Futures-Bot-1024x659.png 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/Futures-Bot-768x494.png 768w" sizes="(max-width: 1320px) 100vw, 1320px" /></a></p>
+<p>Имеет широкий диапазон опций, который позволяет полностью настроить автоматизированную торговлю с расчетом рисков, резких колебаний и прочих условий.</p>
+<h3><span id="DeriBot">DeriBot</span></h3>
+<p><a href="https://deribot.info/?ref=1552" target="_blank" rel="noopener nofollow">https://deribot.info/</a> &#8212; торговый бот , который разработан специально для биржи Deribit. Позволяет торговать фьючерсными контрактами.</p>
+<p>Имеет широкий диапазон настроек и позволяет полностью автоматизировать процесс торговли. Сервера DeriBot находятся максимально близко к серверам биржи, потому выполнение приказов производится мгновенно и без задержки, что минимизирует количество ошибок при высоких колебаниях цены.</p>
+<p><a href="https://cryptotradestocks.com/wp-content/uploads/2020/03/DeriBot.jpg"><img loading="lazy" class="aligncenter wp-image-5024 size-full" src="https://cryptotradestocks.com/wp-content/uploads/2020/03/DeriBot.jpg" alt="DeriBot" width="1400" height="484" srcset="https://cryptotradestocks.com/wp-content/uploads/2020/03/DeriBot.jpg 1400w, https://cryptotradestocks.com/wp-content/uploads/2020/03/DeriBot-300x104.jpg 300w, https://cryptotradestocks.com/wp-content/uploads/2020/03/DeriBot-1024x354.jpg 1024w, https://cryptotradestocks.com/wp-content/uploads/2020/03/DeriBot-768x266.jpg 768w" sizes="(max-width: 1400px) 100vw, 1400px" /></a></p>
+<p>В твиттере бота можно отслеживать ежедневные отчеты, публикации по настройке и прочую полезную информацию <a href="https://twitter.com/DeriBotInfo" target="_blank" rel="noopener nofollow">https://twitter.com/DeriBotInfo</a>.</p>
+<div class='code-block code-block-1 ai-viewport-1 ai-viewport-2' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<!--noindex-->
+<a href="https://www.binance.com/en/register?ref=MOYY19LH" target="_blank" rel="noopener nofollow"><img alt="Баннер Binance 700" src="https://cryptotradestocks.com/wp-content/uploads/2019/12/binance-banner-700.jpg" ></a>
+<!--/noindex--></div>
+<!-- AI CONTENT END 1 -->
+							</div>
+						</article>
+
+						<div class="post-meta">								<div class="post-rating">
+									<div class="post-rating__title">Оценка статьи:</div>
+									<div id="post-ratings-4951" class="post-ratings"  data-nonce="74e4655ba5"><img id="rating_4951_1" src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="1 Звезда" title="1 Звезда" onmouseover="current_rating(4951, 1, '1 Звезда');" onmouseout="ratings_off(1, 0, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_4951_2" src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_off.gif" alt="2 Звезды" title="2 Звезды" onmouseover="current_rating(4951, 2, '2 Звезды');" onmouseout="ratings_off(1, 0, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_4951_3" src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_off.gif" alt="3 Звезды" title="3 Звезды" onmouseover="current_rating(4951, 3, '3 Звезды');" onmouseout="ratings_off(1, 0, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_4951_4" src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_off.gif" alt="4 Звезды" title="4 Звезды" onmouseover="current_rating(4951, 4, '4 Звезды');" onmouseout="ratings_off(1, 0, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_4951_5" src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_off.gif" alt="5 Звезд" title="5 Звезд" onmouseover="current_rating(4951, 5, '5 Звезд');" onmouseout="ratings_off(1, 0, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /> (<strong>2</strong> оценок, среднее: <strong>1,00</strong> из 5)<br /><span class="post-ratings-text" id="ratings_4951_text"></span><div style="display: none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"><meta itemprop="bestRating" content="5" /><meta itemprop="worstRating" content="1" /><meta itemprop="ratingValue" content="1" /><meta itemprop="ratingCount" content="2" /></div></div><div id="post-ratings-4951-loading" class="post-ratings-loading"><img src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/loading.gif" width="16" height="16" class="post-ratings-image" /> Загрузка...</div>								</div>							<div class="post-share">
+								<div class="post-share__title">Поделиться с друзьями:</div>
+								<div class="likely">
+									<div class="twitter">Твитнуть</div>
+									<div class="facebook">Поделиться</div>
+									<div class="vkontakte">Поделиться</div>
+									<div class="telegram">Отправить</div>
+									<div class="odnoklassniki">Класснуть</div>
+								</div>
+							</div>
+						</div>
+
+												<meta itemprop="headline" content="Фьючерсы на биткоин — понятие и торговля контрактами">
+						
+												<meta itemprop="author" content="Александр Кузнецов">
+
+						<meta itemprop="datePublished" content="2020-03-03">
+						<meta itemprop="dateModified" content="2021-09-09">
+						<a itemprop="url" href="https://cryptotradestocks.com/bitcoin-futures" style="display:none">Что такое фьючерсные контракты на Bitcoin и какие биржи с ними работают?</a>
+						<a itemprop="mainEntityOfPage" href="https://cryptotradestocks.com/bitcoin-futures" style="display:none">Ссылка на основную публикацию</a>
+						
+												<div style="display: none;" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<img itemprop="url" src="https://cryptotradestocks.com/wp-content/cache/thumb/fb/3f334c798ca55fb_320x200.jpg" alt="Что такое фьючерсные контракты на Bitcoin и какие биржи с ними работают?">
+							<meta itemprop="width" content="320">
+							<meta itemprop="height" content="200">
+						</div>
+
+						
+						<div style="display: none;" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="CryptoTradeStocks">
+							<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<img itemprop="url" src="https://cryptotradestocks.com/wp-content/uploads/2019/04/logocts.png" alt="CryptoTradeStocks">
+							</div>
+						</div>
+					</div><!-- .article-wrap -->
+				<div class='yarpp-related'>
+    <div class="title">Похожие публикации</div>
+    <ul class="related">
+                    <li class="related__item">
+                <div class="related__item-img">
+                    <img src="https://cryptotradestocks.com/wp-content/cache/thumb/c7/c108f9355707cc7_150x95.jpg" width="150" height="95" alt="Понятие лимитного ордера на примере криптовалютной биржи" />                                    </div>
+                <a href="https://cryptotradestocks.com/limit-order">Понятие лимитного ордера на примере криптовалютной биржи</a>
+            </li>
+                    <li class="related__item">
+                <div class="related__item-img">
+                    <img src="https://cryptotradestocks.com/wp-content/cache/thumb/dd/95460746005e0dd_150x95.jpg" width="150" height="95" alt="Что такое Gap и как применять его в трейдинге?" />                                    </div>
+                <a href="https://cryptotradestocks.com/gap">Что такое Gap и как применять его в трейдинге?</a>
+            </li>
+                    <li class="related__item">
+                <div class="related__item-img">
+                    <img src="https://cryptotradestocks.com/wp-content/cache/thumb/11/41bdcdefc4a8f11_150x95.jpg" width="150" height="95" alt="Как пользоваться индикатором Relative Strength Index?" />                                    </div>
+                <a href="https://cryptotradestocks.com/rsi">Как пользоваться индикатором Relative Strength Index?</a>
+            </li>
+                    <li class="related__item">
+                <div class="related__item-img">
+                    <img src="https://cryptotradestocks.com/wp-content/cache/thumb/ae/4c2bca02e91feae_150x95.jpg" width="150" height="95" alt="Как пользоваться индикатором фракталов Билла Вильямса?" />                                    </div>
+                <a href="https://cryptotradestocks.com/fractals">Как пользоваться индикатором фракталов Билла Вильямса?</a>
+            </li>
+            </ul>
+</div>
+				<aside class="comments-block">
+							<div id="respond" class="respond">
+		<div class="respond__title">Добавить комментарий</div>
+		<div id="cancel-comment-reply"><a rel="nofollow" id="cancel-comment-reply-link" href="/bitcoin-futures#respond" style="display:none;">Нажмите, чтобы отменить ответ.</a></div>
+
+					
+			<!--noindex-->
+			<form action="https://cryptotradestocks.com/wp-comments-post.php" method="post" class="respond-form">
+				
+							
+				<input type="text" name="author" id="author" placeholder="Ваше имя:" class="respond-form__field respond-form__name" value="" aria-required='true' />
+				
+									<input type="text" name="email" id="email" placeholder="Ваш e-mail:" class="respond-form__field respond-form__email" value="" aria-required='true' />
+					<input type="text" name="url" id="url" placeholder="Ваш сайт:" class="respond-form__field respond-form__site" value="" />
+					
+											<textarea name="comment" id="comment_textarea" rows="7" placeholder="Ваш комментарий:" class="respond-form__text respond-form__textarea"></textarea>
+				<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="970d56829c" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="224"/></p>				
+				<input name="submit" type="submit" class="respond-form__button" value="Отправить" />
+
+				<input type='hidden' name='comment_post_ID' value='4951' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+			</form>
+			<!--/noindex-->
+		
+	</div><!-- #respond -->
+					</aside>
+					</main>	
+	<aside class="sidebar sidebar_midle">
+    	<div class="section-posts-box section">
+		<div class="title">Популярные статьи</div>
+		<div class="section-posts">
+	    					<div class="section-posts__item">
+					<img src="https://cryptotradestocks.com/wp-content/cache/thumb/6a/eafd66be7ff086a_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="Стратегии внутрибиржевого и межбиржевого арбитража криптовалют" />					<div class="section-posts__item-title">
+					    <a href="https://cryptotradestocks.com/arbitrazh-kriptovalyut">Стратегии внутрибиржевого и межбиржевого арбитража криптовалют</a>
+					</div>
+					<div class="section-posts__item-text">
+						Рынок криптовалют очень изменчив, поэтому здесь особенно много торговых рисков...					</div>
+											    <div class="post-info section-posts__item-info">
+															<div class="post-info__comment">0</div>
+											    						    			<time class="post-info__time post-info__time_popular" datetime="2019-07-15">15.07.2019</time>
+				    							    </div>
+				    					</div>
+	    						<div class="section-posts__item">
+					<img src="https://cryptotradestocks.com/wp-content/cache/thumb/3a/83eab7d1d2f873a_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="Что такое скальпинг в трейдинге и как на нем заработать?" />					<div class="section-posts__item-title">
+					    <a href="https://cryptotradestocks.com/skalping">Что такое скальпинг в трейдинге и как на нем заработать?</a>
+					</div>
+					<div class="section-posts__item-text">
+						Скальпинг – одна из самых популярных торговых методик, которая давно...					</div>
+											    <div class="post-info section-posts__item-info">
+															<div class="post-info__comment">2</div>
+											    						    			<time class="post-info__time post-info__time_popular" datetime="2019-08-14">14.08.2019</time>
+				    							    </div>
+				    					</div>
+	    						<div class="section-posts__item">
+					<img src="https://cryptotradestocks.com/wp-content/cache/thumb/e2/e73e7132a0da6e2_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="Что такое Short и Long в трейдинге?" />					<div class="section-posts__item-title">
+					    <a href="https://cryptotradestocks.com/short-i-long">Что такое Short и Long в трейдинге?</a>
+					</div>
+					<div class="section-posts__item-text">
+						Возможность заключения сделок шорт и лонг на бирже криптовалют позволяет...					</div>
+											    <div class="post-info section-posts__item-info">
+															<div class="post-info__comment">0</div>
+											    						    			<time class="post-info__time post-info__time_popular" datetime="2019-08-24">24.08.2019</time>
+				    							    </div>
+				    					</div>
+	    				</div> 
+	</div>
+<div class="section section_widget widget_democracy"><div class="title">Опрос</div>
+<!--democracy-->
+<style type="text/css">.democracy:after{content:'';display:table;clear:both}.democracy ul li,.democracy ul{background:none;padding:0;margin:0}.democracy ul li:before{display:none}.democracy input[type='radio'],.democracy input[type='checkbox']{margin:0;vertical-align:middle}.democracy input[type='radio']:focus,.democracy input[type='checkbox']:focus{outline:0}.democracy ul{list-style:none !important;border:0 !important}.democracy ul li{list-style:none !important}input[type="submit"].dem-button,a.dem-button,.dem-button{position:relative;display:inline-block;text-decoration:none;line-height:1;border:0;margin:0;padding:0;cursor:pointer;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}input[type="submit"].dem-button:focus,a.dem-button:focus,.dem-button:focus{outline:0}input[type="submit"].dem-button:disabled,a.dem-button:disabled,.dem-button:disabled{opacity:.6;cursor:not-allowed}a.dem-button:hover{text-decoration:none !important}.democracy{position:relative;margin:0 auto}.democracy input[type='radio'],.democracy input[type='checkbox']{margin-right:.2em}.dem-screen{position:relative;line-height:1.3}.democracy ul.dem-vote{margin-bottom:1em}.democracy ul.dem-vote li{padding-bottom:0;margin-bottom:0}.democracy ul.dem-vote li>*{margin-bottom:.6em}.democracy ul.dem-answers li{padding-bottom:1em}.dem-answers .dem-label{margin-bottom:.2em;line-height:1.2}.dem-graph{position:relative;color:#555;color:rgba(0,0,0,.6);box-sizing:content-box;width:100%;display:table;height:1.2em;line-height:1.2em}.dem-fill{position:absolute;top:0;left:0;height:100%;background-color:#7cb4dd}.dem-voted-this .dem-fill{background-color:#ffc45a}.dem-votes-txt,.dem-percent-txt{position:relative;display:table-cell;padding-left:.3em;vertical-align:middle;font-size:90%}.dem-poll-info{padding-bottom:1em}.dem-poll-info:after{content:'';display:table;clear:both}.dem-poll-info>*{font-size:85%;display:block;float:right;clear:both;text-align:right;opacity:.7;line-height:1.3}.dem-vote label{float:none;display:block}.dem-results-link{display:inline-block;line-height:1;margin:.8em 1em}.dem-vote .dem-disabled{opacity:.5}.democracy .dem-bottom{padding-bottom:1em}.dem-bottom{text-align:center}.dem-bottom:after{content:'';display:table;clear:both}.dem-poll-title{display:block;margin-bottom:1.5em;margin-top:1.2em;font-size:120%}.dem-notice{z-index:10;position:absolute;top:0;border-radius:2px;width:100%;padding:1.5em 2em;text-align:center;background:rgba(247,241,212,.8);color:#6d6214}.dem-notice-close{position:absolute;top:0;right:0;padding:5px;cursor:pointer;line-height:.6;font-size:150%}.dem-notice-close:hover{color:#d26616}.dem-star{font-size:90%;vertical-align:baseline;padding-left:.3em;color:#ff4e00}.dem-poll-note{font-size:90%;padding:.5em;opacity:.8;line-height:1.3}.democracy .dem-copyright{position:absolute;bottom:-1em;right:0;text-decoration:none;border-bottom:0;color:#b2b2b2;opacity:.5;line-height:1}.democracy .dem-copyright:hover{opacity:1}.dem-add-answer{position:relative}.dem-add-answer>*{display:block}.dem-add-answer a{display:inline-block}input.dem-add-answer-txt{width:100%;box-sizing:border-box}.dem-add-answer-close{position:absolute;right:0;padding:0 .7em;cursor:pointer;color:#333}.dem-add-answer-close:hover{color:#ff2700}.dem-edit-link{display:block;position:absolute;top:0;right:0;line-height:1;text-decoration:none !important;border:0 !important}.dem-edit-link svg{width:1.2em !important;fill:#5a5a5a;fill:rgba(0,0,0,.6)}.dem-edit-link:hover svg{fill:#35a91d}.dem-loader{display:none;position:absolute;top:0;left:0;width:100%;height:100%}.dem-loader>*{display:table-cell;vertical-align:middle;text-align:center}.dem-loader svg{width:20%;max-width:100px;min-width:80px;margin-bottom:15%}.dem-loader [class^="dem-"]{margin-bottom:15% !important}.dem__collapser{display:block;cursor:pointer;text-align:center;font-size:150%;line-height:1}.dem__collapser:hover{color:#f31;background:rgba(255,255,255,.3)}.dem__collapser.expanded{position:relative;height:1em}.dem__collapser.collapsed{position:absolute;top:0;bottom:0;right:0;left:0}.dem__collapser .arr{display:block;position:absolute;bottom:0;width:100%}.dem__collapser.collapsed .arr:before{content:"▾"}.dem__collapser.expanded .arr:before{content:"▴"}.dem-poll-shortcode{margin-bottom:1.5em}.dem-archives .dem-elem-wrap{margin-bottom:2em;padding-bottom:20px;border-bottom:1px dashed #ccc}.dem-archives .dem-archive-link{display:none}.dem-paging{text-align:center;margin:1.5em auto}.dem-paging>*{display:inline-block;padding:.3em .8em;border-radius:.2em;background:#e2e2e2;color:#333;text-decoration:none;text-transform:lowercase;user-select:none}.dem-paging>a{color:#333}.dem-paging>a:hover{background:#ccc;color:#333;text-decoration:none}.dem-paging .current{background:#656565;color:#fff}.dem-paging .dots{background:none}.dem-link{font-style:italic;font-size:90%}.dem-vote-link:before{content:'◂ '}.dem-vote label:hover{opacity:.8}.dem-vote-button{float:left}.dem-results-link{float:right}.dem-graph{font-family:Arial,sans-serif;background:#f7f7f7;background:linear-gradient(to bottom,rgba(0,0,0,.05) 50%,rgba(0,0,0,.1) 50%);background:-webkit-linear-gradient(top,rgba(0,0,0,.05) 50%,rgba(0,0,0,.1) 50%)}.dem-fill{background-image:linear-gradient(to right,rgba(255,255,255,.3),transparent);background-image:-webkit-linear-gradient(left,rgba(255,255,255,.3),transparent)}.dem-answers .dem-label{margin-bottom:.1em}.dem-votes-txt,.dem-percent-txt{font-size:80%}.dem-percent-txt{display:none}.dem-answers li:hover .dem-votes-txt{display:none}.dem-answers li:hover .dem-percent-txt{display:table-cell}.dem-voted-this .dem-label:before{content:'✓';display:inline-block;margin-right:.2em}.dem-voted-this .dem-graph{border-color:#969696}.dem-label-percent-txt,.dem-votes-txt-percent,.dem-novoted .dem-votes-txt{display:none}.dem-poll-info{font-style:italic}.dem-archive-link{text-align:right}.dem-bottom{text-align:left}input[type="submit"].dem-button,a.dem-button,.dem-button{font-size:90%;font-family:tahoma,arial,sans-serif;padding:.8em 1.6em !important;color:#fff;background:#61a9de;text-transform:uppercase}input[type="submit"].dem-button:hover,a.dem-button:hover,.dem-button:hover{color:#fff;background:#3b8bc6}a.dem-button:visited{color:#fff}</style>
+<div id="democracy-2" class="democracy" data-opts='{"ajax_url":"https:\/\/cryptotradestocks.com\/wp-admin\/admin-ajax.php","pid":2,"max_answs":"10","answs_max_height":500,"anim_speed":400,"line_anim_speed":1500}' ><strong class="dem-poll-title">На каких биржах Вы торгуете?</strong><div class="dem-screen vote"><form method="POST" action="#democracy-2"><ul class="dem-vote">
+					<li data-aid="6">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="6" name="answer_ids[]"><span class="dem__spot"></span> Binance - <a href="https://www.binance.com/en/register?ref=MOYY19LH" target="_blank" rel="noopener nofollow" style="color: #0000FF">binance.com</a>
+						</label>
+					</li>
+					<li data-aid="8">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="8" name="answer_ids[]"><span class="dem__spot"></span> EXMO - <a href="https://exmo.me/?ref=851529" target="_blank" rel="noopener nofollow" style="color: #0000FF">exmo.me</a>
+						</label>
+					</li>
+					<li data-aid="16">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="16" name="answer_ids[]"><span class="dem__spot"></span> Другие
+						</label>
+					</li>
+					<li data-aid="9">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="9" name="answer_ids[]"><span class="dem__spot"></span> Yobit - <a href="https://yobit.net/?bonus=dOWeG" target="_blank" rel="noopener nofollow" style="color: #0000FF">yobit.io</a>
+						</label>
+					</li>
+					<li data-aid="10">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="10" name="answer_ids[]"><span class="dem__spot"></span> Kucoin - <a href="https://www.kucoin.com/?rcode=H87Krf" target="_blank" rel="noopener nofollow" style="color: #0000FF">kucoin.com</a>
+						</label>
+					</li>
+					<li data-aid="11">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="11" name="answer_ids[]"><span class="dem__spot"></span> Huobi - <a href="https://www.hbg.com/en-us/register/?invite_code=y4fa4" target="_blank" rel="noopener nofollow" style="color: #0000FF">huobi.com</a>
+						</label>
+					</li>
+					<li data-aid="14">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="14" name="answer_ids[]"><span class="dem__spot"></span> OKEx - <a href="https://www.okex.com/join/1872262" target="_blank" rel="noopener nofollow" style="color: #0000FF">okex.com</a>
+						</label>
+					</li>
+					<li data-aid="15">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="15" name="answer_ids[]"><span class="dem__spot"></span> Bitfinex - <a href="https://www.bitfinex.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">bitfinex.com</a>
+						</label>
+					</li>
+					<li data-aid="7">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="7" name="answer_ids[]"><span class="dem__spot"></span> BitMEX - <a href="https://www.bitmex.com/register/QgNBih" target="_blank" rel="noopener nofollow" style="color: #0000FF">bitmex.com</a>
+						</label>
+					</li>
+					<li data-aid="12">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="12" name="answer_ids[]"><span class="dem__spot"></span> Bithumb - <a href="https://www.bithumb.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">bithumb.com</a>
+						</label>
+					</li>
+					<li data-aid="13">
+						<label class="dem__checkbox_label">
+							<input class="dem__checkbox"  type="checkbox" value="13" name="answer_ids[]"><span class="dem__spot"></span> UpBit - <a href="https://sg.upbit.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">upbit.com</a>
+						</label>
+					</li></ul><div class="dem-bottom"><input type="hidden" name="dem_act" value="vote"><input type="hidden" name="dem_pid" value="2"><div class="dem-vote-button"><input class="dem-button " type="submit" value="Голосовать" data-dem-act="vote"></div><a href="javascript:void(0);" class="dem-link dem-results-link" data-dem-act="view" rel="nofollow">Результаты</a></div></form></div><noscript>Poll Options are limited because JavaScript is disabled in your browser.</noscript><div class="dem-loader"><div><style type="text/css">
+.dem-roller {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.con1 > div, .con2 > div, .con3 > div {
+  width: 10px;
+  height: 10px;
+  background-color: #2686cc;
+
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.dem-roller .demrcont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.con2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.con3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+
+.con2 .circle1 { -webkit-animation-delay: -1.1s; animation-delay: -1.1s; }
+.con3 .circle1 { -webkit-animation-delay: -1.0s; animation-delay: -1.0s; }
+.con1 .circle2 { -webkit-animation-delay: -0.9s; animation-delay: -0.9s; }
+.con2 .circle2 { -webkit-animation-delay: -0.8s; animation-delay: -0.8s; }
+.con3 .circle2 { -webkit-animation-delay: -0.7s; animation-delay: -0.7s; }
+.con1 .circle3 { -webkit-animation-delay: -0.6s; animation-delay: -0.6s; }
+.con2 .circle3 { -webkit-animation-delay: -0.5s; animation-delay: -0.5s; }
+.con3 .circle3 { -webkit-animation-delay: -0.4s; animation-delay: -0.4s; }
+.con1 .circle4 { -webkit-animation-delay: -0.3s; animation-delay: -0.3s; }
+.con2 .circle4 { -webkit-animation-delay: -0.2s; animation-delay: -0.2s; }
+.con3 .circle4 { -webkit-animation-delay: -0.1s; animation-delay: -0.1s; }
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+</style>
+
+<div class="dem-roller">
+  <div class="demrcont con1">
+    <div class="circle1 css-fill"></div>
+    <div class="circle2 css-fill"></div>
+    <div class="circle3 css-fill"></div>
+    <div class="circle4 css-fill"></div>
+  </div>
+  <div class="demrcont con2">
+    <div class="circle1 css-fill"></div>
+    <div class="circle2 css-fill"></div>
+    <div class="circle3 css-fill"></div>
+    <div class="circle4 css-fill"></div>
+  </div>
+  <div class="demrcont con3">
+    <div class="circle1 css-fill"></div>
+    <div class="circle2 css-fill"></div>
+    <div class="circle3 css-fill"></div>
+    <div class="circle4 css-fill"></div>
+  </div>
+</div>
+
+</div></div></div><!--democracy-->
+			<!--noindex-->
+			<div class="dem-cache-screens" style="display:none;" data-opt_logs="1"><div class="dem-screen-cache voted"><ul class="dem-answers" data-voted-class="dem-voted-this" data-voted-txt="Это Ваш голос. "><li class="dem-winner" title=' 407 голосов - 54% из всех голосов' data-aid="6"><div class="dem-label">Binance - <a href="https://www.binance.com/en/register?ref=MOYY19LH" target="_blank" rel="noopener nofollow" style="color: #0000FF">binance.com</a> <span class="dem-label-percent-txt">54%, 407 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="54%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">407 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">54%</span> </div><div class="dem-percent-txt">407 голосов - 54% из всех голосов</div></div></li><li class="" title=' 69 голосов - 9% из всех голосов' data-aid="8"><div class="dem-label">EXMO - <a href="https://exmo.me/?ref=851529" target="_blank" rel="noopener nofollow" style="color: #0000FF">exmo.me</a> <span class="dem-label-percent-txt">9%, 69 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="9%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">69 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">9%</span> </div><div class="dem-percent-txt">69 голосов - 9% из всех голосов</div></div></li><li class="" title=' 58 голосов - 8% из всех голосов' data-aid="16"><div class="dem-label">Другие <span class="dem-label-percent-txt">8%, 58 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="8%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">58 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">8%</span> </div><div class="dem-percent-txt">58 голосов - 8% из всех голосов</div></div></li><li class="" title=' 46 голосов - 6% из всех голосов' data-aid="9"><div class="dem-label">Yobit - <a href="https://yobit.net/?bonus=dOWeG" target="_blank" rel="noopener nofollow" style="color: #0000FF">yobit.io</a> <span class="dem-label-percent-txt">6%, 46 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="6%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">46 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">6%</span> </div><div class="dem-percent-txt">46 голосов - 6% из всех голосов</div></div></li><li class="" title=' 38 голосов - 5% из всех голосов' data-aid="10"><div class="dem-label">Kucoin - <a href="https://www.kucoin.com/?rcode=H87Krf" target="_blank" rel="noopener nofollow" style="color: #0000FF">kucoin.com</a> <span class="dem-label-percent-txt">5%, 38 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="5%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">38 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">5%</span> </div><div class="dem-percent-txt">38 голосов - 5% из всех голосов</div></div></li><li class="" title=' 36 голосов - 5% из всех голосов' data-aid="11"><div class="dem-label">Huobi - <a href="https://www.hbg.com/en-us/register/?invite_code=y4fa4" target="_blank" rel="noopener nofollow" style="color: #0000FF">huobi.com</a> <span class="dem-label-percent-txt">5%, 36 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="5%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">36 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">5%</span> </div><div class="dem-percent-txt">36 голосов - 5% из всех голосов</div></div></li><li class="" title=' 33 голоса - 4% из всех голосов' data-aid="14"><div class="dem-label">OKEx - <a href="https://www.okex.com/join/1872262" target="_blank" rel="noopener nofollow" style="color: #0000FF">okex.com</a> <span class="dem-label-percent-txt">4%, 33 <span class="votxt">голоса</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="4%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">33 <span class="votxt">голоса</span></span> <span class="dem-votes-txt-percent">4%</span> </div><div class="dem-percent-txt">33 голоса - 4% из всех голосов</div></div></li><li class="" title=' 27 голосов - 4% из всех голосов' data-aid="15"><div class="dem-label">Bitfinex - <a href="https://www.bitfinex.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">bitfinex.com</a> <span class="dem-label-percent-txt">4%, 27 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="4%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">27 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">4%</span> </div><div class="dem-percent-txt">27 голосов - 4% из всех голосов</div></div></li><li class="" title=' 13 голосов - 2% из всех голосов' data-aid="7"><div class="dem-label">BitMEX - <a href="https://www.bitmex.com/register/QgNBih" target="_blank" rel="noopener nofollow" style="color: #0000FF">bitmex.com</a> <span class="dem-label-percent-txt">2%, 13 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="2%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">13 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">2%</span> </div><div class="dem-percent-txt">13 голосов - 2% из всех голосов</div></div></li><li class="" title=' 12 голосов - 2% из всех голосов' data-aid="12"><div class="dem-label">Bithumb - <a href="https://www.bithumb.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">bithumb.com</a> <span class="dem-label-percent-txt">2%, 12 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="2%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">12 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">2%</span> </div><div class="dem-percent-txt">12 голосов - 2% из всех голосов</div></div></li><li class="" title=' 9 голосов - 1% из всех голосов' data-aid="13"><div class="dem-label">UpBit - <a href="https://sg.upbit.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">upbit.com</a> <span class="dem-label-percent-txt">1%, 9 <span class="votxt">голосов</span></span></div><div class="dem-graph"><div class="dem-fill" data-width="1%"></div><div class="dem-votes-txt"> <span class="dem-votes-txt-votes">9 <span class="votxt">голосов</span></span> <span class="dem-votes-txt-percent">1%</span> </div><div class="dem-percent-txt">9 голосов - 1% из всех голосов</div></div></li></ul><div class="dem-bottom"><div class="dem-poll-info"><div class="dem-total-votes">Всего голосов: 748</div><div class="dem-users-voted">Голосовало: 533</div> <div class="dem-date" title="Начало"> <span class="dem-begin-date">11.02.2020</span> </div></div> <div class="dem-notice dem-youarevote" style="display:none;"> <div class="dem-notice-close" onclick="jQuery(this).parent().fadeOut();">&times;</div> Вы или с вашего IP уже голосовали. </div><button type="button" class="dem-button dem-vote-link " data-dem-act="vote_screen">Голосовать</button></div></div><div class="dem-screen-cache vote"><form method="POST" action="#democracy-2"><ul class="dem-vote"> <li data-aid="6"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="6" name="answer_ids[]"><span class="dem__spot"></span> Binance - <a href="https://www.binance.com/en/register?ref=MOYY19LH" target="_blank" rel="noopener nofollow" style="color: #0000FF">binance.com</a> </label> </li> <li data-aid="8"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="8" name="answer_ids[]"><span class="dem__spot"></span> EXMO - <a href="https://exmo.me/?ref=851529" target="_blank" rel="noopener nofollow" style="color: #0000FF">exmo.me</a> </label> </li> <li data-aid="16"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="16" name="answer_ids[]"><span class="dem__spot"></span> Другие </label> </li> <li data-aid="9"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="9" name="answer_ids[]"><span class="dem__spot"></span> Yobit - <a href="https://yobit.net/?bonus=dOWeG" target="_blank" rel="noopener nofollow" style="color: #0000FF">yobit.io</a> </label> </li> <li data-aid="10"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="10" name="answer_ids[]"><span class="dem__spot"></span> Kucoin - <a href="https://www.kucoin.com/?rcode=H87Krf" target="_blank" rel="noopener nofollow" style="color: #0000FF">kucoin.com</a> </label> </li> <li data-aid="11"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="11" name="answer_ids[]"><span class="dem__spot"></span> Huobi - <a href="https://www.hbg.com/en-us/register/?invite_code=y4fa4" target="_blank" rel="noopener nofollow" style="color: #0000FF">huobi.com</a> </label> </li> <li data-aid="14"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="14" name="answer_ids[]"><span class="dem__spot"></span> OKEx - <a href="https://www.okex.com/join/1872262" target="_blank" rel="noopener nofollow" style="color: #0000FF">okex.com</a> </label> </li> <li data-aid="15"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="15" name="answer_ids[]"><span class="dem__spot"></span> Bitfinex - <a href="https://www.bitfinex.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">bitfinex.com</a> </label> </li> <li data-aid="7"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="7" name="answer_ids[]"><span class="dem__spot"></span> BitMEX - <a href="https://www.bitmex.com/register/QgNBih" target="_blank" rel="noopener nofollow" style="color: #0000FF">bitmex.com</a> </label> </li> <li data-aid="12"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="12" name="answer_ids[]"><span class="dem__spot"></span> Bithumb - <a href="https://www.bithumb.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">bithumb.com</a> </label> </li> <li data-aid="13"> <label class="dem__checkbox_label"> <input class="dem__checkbox" type="checkbox" value="13" name="answer_ids[]"><span class="dem__spot"></span> UpBit - <a href="https://sg.upbit.com/" target="_blank" rel="noopener nofollow" style="color: #0000FF">upbit.com</a> </label> </li></ul><div class="dem-bottom"><input type="hidden" name="dem_act" value="vote"><input type="hidden" name="dem_pid" value="2"> <div class="dem-notice dem-youarevote" style="display:none;"> <div class="dem-notice-close" onclick="jQuery(this).parent().fadeOut();">&times;</div> Вы или с вашего IP уже голосовали. </div><div style="display:none;" class="dem-voted-button"><input class="dem-button " type="submit" value="Уже голосовали..." disabled="disabled"></div><div class="dem-vote-button"><input class="dem-button " type="submit" value="Голосовать" data-dem-act="vote"></div><a href="javascript:void(0);" class="dem-link dem-results-link" data-dem-act="view" rel="nofollow">Результаты</a></div></form></div>
+			</div>
+			<!--/noindex--></div><div class="section section_widget widget_recentpost_morkovin_widget"><div class="title">Свежие публикации</div><ul><li class="section-posts__item"><img src="https://cryptotradestocks.com/wp-content/cache/thumb/2b/6fa39d5b0072e2b_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="3Commas – инструкция по регистрации и автоматической торговле" /><div class="section-posts__item-title"><a href="https://cryptotradestocks.com/3commas">3Commas – инструкция по регистрации и автоматической торговле</a></div>                        <div class="post-info section-posts__item-info">
+                                                            <div class="post-info__comment">0</div>
+                                                                                        <time class="post-info__time post-info__time_popular" datetime="2021-05-14">14.05.2021</time>
+                                                    </div>
+                        </li><li class="section-posts__item"><img src="https://cryptotradestocks.com/wp-content/cache/thumb/06/350508fc2480f06_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="RevenueBot – инструкция по регистрации и настройке бота" /><div class="section-posts__item-title"><a href="https://cryptotradestocks.com/revenuebot">RevenueBot – инструкция по регистрации и настройке бота</a></div>                        <div class="post-info section-posts__item-info">
+                                                            <div class="post-info__comment">0</div>
+                                                                                        <time class="post-info__time post-info__time_popular" datetime="2021-04-23">23.04.2021</time>
+                                                    </div>
+                        </li><li class="section-posts__item"><img src="https://cryptotradestocks.com/wp-content/cache/thumb/9e/c278f0706d8e49e_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="Coinsbit – подробный обзор характеристик и возможностей биржи" /><div class="section-posts__item-title"><a href="https://cryptotradestocks.com/coinsbit">Coinsbit – подробный обзор характеристик и возможностей биржи</a></div>                        <div class="post-info section-posts__item-info">
+                                                            <div class="post-info__comment">6</div>
+                                                                                        <time class="post-info__time post-info__time_popular" datetime="2020-02-23">23.02.2020</time>
+                                                    </div>
+                        </li><li class="section-posts__item"><img src="https://cryptotradestocks.com/wp-content/cache/thumb/09/7583a1bf4cc8f09_300x180.jpg" width="300" height="180" class="section-posts__item-img" alt="Currency – обзор характеристик и возможностей белорусской биржи" /><div class="section-posts__item-title"><a href="https://cryptotradestocks.com/currency">Currency – обзор характеристик и возможностей белорусской биржи</a></div>                        <div class="post-info section-posts__item-info">
+                                                            <div class="post-info__comment">0</div>
+                                                                                        <time class="post-info__time post-info__time_popular" datetime="2020-02-19">19.02.2020</time>
+                                                    </div>
+                        </li></ul></div>
+</aside></div><!-- /.content-wrapper -->
+</div><!-- /.main-box -->
+<footer class="footer" id="footer">
+		<nav class="footer-nav"><ul><li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-117"><a href="https://cryptotradestocks.com/privacy-policy">Политика конфиденциальности</a></li>
+<li id="menu-item-120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120"><a href="https://cryptotradestocks.com/user-agreement">Пользовательское соглашение</a></li>
+<li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="https://cryptotradestocks.com/sitemap">Карта сайта</a></li>
+</ul></nav>	<div class="footer-bottom">
+		<div class="copy">© 2023 Все права защищены.</div>
+			</div>
+</footer>
+</div><!-- /.wrapper -->
+
+<!--democracy-->
+<script type="text/javascript">function dem_ready(e){"use strict";var t,n=e(".democracy"),i=".dem-screen",o=".dem-add-answer-txt",a=e(".dem-loader:first"),s={};n.length&&(s.opts=n.first().data("opts"),s.ajaxurl=s.opts.ajax_url,s.answMaxHeight=s.opts.answs_max_height,s.speed=parseInt(s.opts.anim_speed),s.lineAnimSpeed=parseInt(s.opts.line_anim_speed),setTimeout(function(){var t=n.find(i).filter(":visible"),o=function(){t.each(function(){s.setHeight(e(this),1)})};t.demInitActions(1),e(window).on("resize.demsetheight",o),e(window).load(o),s.maxAnswLimitInit();var a=e(".dem-cache-screens");a.length>0&&a.demCacheInit()},10),e.fn.demInitActions=function(t){return this.each(function(){var n=e(this);n.find("[data-dem-act]").each(function(){var t=e(this);t.attr("href",""),t.click(function(e){e.preventDefault(),t.blur().demDoAction(t.attr("data-dem-act"))})});!!n.find("input[type=radio][data-dem-act=vote]").first().length&&n.find(".dem-vote-button").hide(),s.setAnswsMaxHeight(n),s.lineAnimSpeed&&n.find(".dem-fill").each(function(){var t=e(this);setTimeout(function(){t.animate({width:t.data("width")},s.lineAnimSpeed)},s.speed,"linear")}),s.setHeight(n,t),n.find("form").submit(function(t){t.preventDefault();e(this).find('input[name="dem_act"]').val()&&e(this).demDoAction(e(this).find('input[name="dem_act"]').val())})})},e.fn.demSetLoader=function(){var e=this;return a.length?e.closest(i).append(a.clone().css("display","table")):t=setTimeout(function(){s.demLoadingDots(e)},50),this},e.fn.demUnsetLoader=function(){return a.length?this.closest(i).find(".dem-loader").remove():clearTimeout(t),this},e.fn.demAddAnswer=function(){var t=this.first(),n=t.closest(i),a=n.find("[type=checkbox]").length>0,s=e('<input type="text" class="'+o.replace(/\./,"")+'" value="">');if(n.find(".dem-vote-button").show(),n.find("[type=radio]").each(function(){e(this).on("click",function(){t.fadeIn(300),e(o).remove()}),"radio"===e(this)[0].type&&(this.checked=!1)}),t.hide().parent("li").append(s),s.hide().fadeIn(300).focus(),a){var d=n.find(o);e('<span class="dem-add-answer-close">×</span>').insertBefore(d).css("line-height",d.outerHeight()+"px").click(function(){var t=e(this).parent("li");t.find("input").remove(),t.find("a").fadeIn(300),e(this).remove()})}return!1},e.fn.demCollectAnsw=function(){var t=this.closest("form"),n=t.find("[type=checkbox],[type=radio],[type=text]"),i=t.find(o).val(),a=[],s=n.filter("[type=checkbox]:checked");if(s.length>0)s.each(function(){a.push(e(this).val())});else{var d=n.filter("[type=radio]:checked");d.length&&a.push(d.val())}return i&&a.push(i),(a=a.join("~"))||""},e.fn.demDoAction=function(t){var n=this.first(),o=n.closest(".democracy"),a={dem_pid:o.data("opts").pid,dem_act:t,action:"dem_ajax"};return void 0===a.dem_pid?(console.log("Poll id is not defined!"),!1):"vote"!==t||(a.answer_ids=n.demCollectAnsw(),a.answer_ids)?!("delVoted"===t&&!confirm(n.data("confirm-text")))&&("newAnswer"===t?(n.demAddAnswer(),!1):(n.demSetLoader(),e.post(s.ajaxurl,a,function(t){n.demUnsetLoader(),n.closest(i).html(t).demInitActions(),setTimeout(function(){e("html:first,body:first").animate({scrollTop:o.offset().top-70},500)},200)}),!1)):(s.demShake(n),!1)},e.fn.demCacheShowNotice=function(e){var t=this.first(),n=t.find(".dem-youarevote").first();return"blockForVisitor"===e&&(t.find(".dem-revote-button").remove(),n=t.find(".dem-only-users").first()),t.prepend(n.show()),setTimeout(function(){n.slideUp("slow")},1e4),this},s.cacheSetAnswrs=function(t,n){var i=n.split(/,/);if(t.hasClass("voted")){var o=t.find(".dem-answers"),a=o.data("voted-class"),s=o.data("voted-txt");e.each(i,function(n,i){t.find('[data-aid="'+i+'"]').addClass(a).attr("title",function(){return s+e(this).attr("title")})}),t.find(".dem-vote-link").remove()}else{var d=t.find("[data-aid]"),r=t.find(".dem-voted-button");e.each(i,function(e,t){d.filter('[data-aid="'+t+'"]').find("input").prop("checked","checked")}),d.find("input").prop("disabled","disabled"),t.find(".dem-vote-button").remove(),r.length?r.show():(t.find('input[value="vote"]').remove(),t.find(".dem-revote-button-wrap").show())}},e.fn.demCacheInit=function(){return this.each(function(){var t=e(this),n=t.prevAll(".democracy:first");if(n.length||(n=t.closest(".democracy")),n.length){var o=n.find(i).first(),a=n.data("opts").pid,d=Cookies.get("demPoll_"+a),r="notVote"===d,c=!(void 0===d||r),f=t.find(i+"-cache.vote").html(),l=t.find(i+"-cache.voted").html();if(f){var h=c&&l;if(o.html((h?l:f)+"\x3c!--cache--\x3e").removeClass("vote voted").addClass(h?"voted":"vote"),c&&s.cacheSetAnswrs(o,d),o.demInitActions(1),!r&&!c&&1==t.data("opt_logs")){var u,m=function(){clearTimeout(u)},p=function(){u=setTimeout(function(){if(!n.hasClass("checkAnswDone")){n.addClass("checkAnswDone");var t=n.find(".dem-link").first();t.demSetLoader(),e.post(s.ajaxurl,{dem_pid:n.data("opts").pid,dem_act:"getVotedIds",action:"dem_ajax"},function(e){t.demUnsetLoader(),e&&(o.html(l),s.cacheSetAnswrs(o,e),o.demInitActions(),o.demCacheShowNotice(e))})}},700)};n.hover(p,m),n.click(p)}}}else console.warn("Democracy: Main dem div not found")})},s.detectRealHeight=function(e){var t=e.clone().css({height:"auto"}).insertBefore(e),n="border-box"===t.css("box-sizing")?parseInt(t.css("height")):t.height();return t.remove(),n},s.setHeight=function(t,n){var i=s.detectRealHeight(t);n?t.css({height:i}):t.css({opacity:0}).animate({height:i},s.speed,function(){e(this).animate({opacity:1},1.5*s.speed)})},s.setAnswsMaxHeight=function(t){if("-1"!==s.answMaxHeight&&"0"!==s.answMaxHeight&&s.answMaxHeight){var n=t.find(".dem-vote, .dem-answers").first(),i=parseInt(s.answMaxHeight);n.css({"max-height":"none","overflow-y":"visible"});if(("border-box"===n.css("box-sizing")?parseInt(n.css("height")):n.height())-i>100){n.css("position","relative");var o,a=e('<span class="dem__collapser"><span class="arr"></span></span>').appendTo(n),d=function(){a.addClass("expanded").removeClass("collapsed")},r=function(){a.addClass("collapsed").removeClass("expanded")};t.data("expanded")?d():(r(),n.height(i).css("overflow-y","hidden")),a.hover(function(){t.data("expanded")||(o=setTimeout(function(){a.trigger("click")},1e3))},function(){clearTimeout(o)}),a.click(function(){if(clearTimeout(o),t.data("expanded"))r(),t.data("expanded",!1),t.height("auto"),n.stop().css("overflow-y","hidden").animate({height:i},s.speed,function(){s.setHeight(t,!0)});else{d();var e=s.detectRealHeight(n);e+=7,t.data("expanded",!0),t.height("auto"),n.stop().animate({height:e},s.speed,function(){s.setHeight(t,!0),n.css("overflow-y","visible")})}})}}},s.maxAnswLimitInit=function(){n.on("change",'input[type="checkbox"]',function(){var t=e(this).closest(".democracy").data("opts").max_answs,n=e(this).closest(i).find('input[type="checkbox"]');n.filter(":checked").length>=t?n.filter(":not(:checked)").each(function(){e(this).prop("disabled",!0).closest("li").addClass("dem-disabled")}):n.each(function(){e(this).prop("disabled",!1).closest("li").removeClass("dem-disabled")})})},s.demShake=function(e){var t=e.css("position");for(t&&"static"!==t||e.css("position","relative"),t=1;2>=t;t++)e.animate({left:-10},50).animate({left:10},100).animate({left:0},50)},s.demLoadingDots=function(e){var n=e,i=n.is("input"),o=i?n.val():n.html();"..."===o.substring(o.length-3)?i?n[0].value=o.substring(0,o.length-3):n[0].innerHTML=o.substring(0,o.length-3):i?n[0].value+=".":n[0].innerHTML+=".",t=setTimeout(function(){s.demLoadingDots(n)},200)})}!function(e){var t;if("function"==typeof define&&define.amd&&(define(e),t=!0),"object"==typeof exports&&(module.exports=e(),t=!0),!t){var n=window.Cookies,i=window.Cookies=e();i.noConflict=function(){return window.Cookies=n,i}}}(function(){function e(){for(var e=0,t={};e<arguments.length;e++){var n=arguments[e];for(var i in n)t[i]=n[i]}return t}function t(e){return e.replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent)}function n(i){function o(){}function a(t,n,a){if("undefined"!=typeof document){"number"==typeof(a=e({path:"/"},o.defaults,a)).expires&&(a.expires=new Date(1*new Date+864e5*a.expires)),a.expires=a.expires?a.expires.toUTCString():"";try{var s=JSON.stringify(n);/^[\{\[]/.test(s)&&(n=s)}catch(e){}n=i.write?i.write(n,t):encodeURIComponent(String(n)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),t=encodeURIComponent(String(t)).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent).replace(/[\(\)]/g,escape);var d="";for(var r in a)a[r]&&(d+="; "+r,!0!==a[r]&&(d+="="+a[r].split(";")[0]));return document.cookie=t+"="+n+d}}function s(e,n){if("undefined"!=typeof document){for(var o={},a=document.cookie?document.cookie.split("; "):[],s=0;s<a.length;s++){var d=a[s].split("="),r=d.slice(1).join("=");n||'"'!==r.charAt(0)||(r=r.slice(1,-1));try{var c=t(d[0]);if(r=(i.read||i)(r,c)||t(r),n)try{r=JSON.parse(r)}catch(e){}if(o[c]=r,e===c)break}catch(e){}}return e?o[e]:o}}return o.set=a,o.get=function(e){return s(e,!1)},o.getJSON=function(e){return s(e,!0)},o.remove=function(t,n){a(t,"",e(n,{expires:-1}))},o.defaults={},o.withConverter=n,o}return n(function(){})});var demjquerywait=setInterval(function(){"undefined"!=typeof jQuery&&(clearInterval(demjquerywait),jQuery(document).ready(dem_ready))},50);</script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-includes/js/comment-reply.min.js?ver=5.5.11' id='comment-reply-js'></script>
+<script type='text/javascript' id='toc-front-js-extra'>
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-content/plugins/table-of-contents-plus/front.min.js?ver=2002' id='toc-front-js'></script>
+<script type='text/javascript' id='wp-postratings-js-extra'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"https:\/\/cryptotradestocks.com\/wp-content\/plugins\/wp-postratings","ajax_url":"https:\/\/cryptotradestocks.com\/wp-admin\/admin-ajax.php","text_wait":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043d\u0435 \u0433\u043e\u043b\u043e\u0441\u0443\u0439\u0442\u0435 \u0437\u0430 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u043f\u0438\u0441\u0435\u0439 \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e.","image":"stars_crystal","image_ext":"gif","max":"5","show_loading":"1","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src="https://cryptotradestocks.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_over.gif";;
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-content/plugins/wp-postratings/js/postratings-js.js?ver=1.89' id='wp-postratings-js'></script>
+<script type='text/javascript' src='https://cryptotradestocks.com/wp-includes/js/wp-embed.min.js?ver=5.5.11' id='wp-embed-js'></script>
+<script async="async" type='text/javascript' src='https://cryptotradestocks.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.7' id='akismet-form-js'></script>
+</div><!-- /#main -->
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.192 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-01-18 12:47:35 -->
+
+<!-- super cache -->
